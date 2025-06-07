@@ -1233,36 +1233,7 @@ Dear me, am sorry for killing you prematurely.
       once: true,
     });
     </script>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Load loves from localStorage
-  document.querySelectorAll('.love-btn').forEach(btn => {
-    const poemId = btn.dataset.id;
-    const countEl = btn.querySelector('.love-count');
-    const stored = JSON.parse(localStorage.getItem('loves') || '{}');
-    const loves = stored[poemId] || 0;
-    countEl.textContent = loves;
-    if (stored[`liked_${poemId}`]) btn.classList.add('loved');
-
-    btn.addEventListener('click', () => {
-      const liked = btn.classList.toggle('loved');
-      let lovesData = JSON.parse(localStorage.getItem('loves') || '{}');
-      let count = parseInt(countEl.textContent);
-
-      if (liked) {
-        count++;
-        lovesData[`liked_${poemId}`] = true;
-      } else {
-        count = Math.max(0, count - 1);
-        delete lovesData[`liked_${poemId}`];
-      }
-
-      countEl.textContent = count;
-      lovesData[poemId] = count;
-      localStorage.setItem('loves', JSON.stringify(lovesData));
-    });
-  });
-  </script>
+  
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const poemSearch = document.getElementById('poem-search');
@@ -1312,6 +1283,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Load loves from localStorage
+  document.querySelectorAll('.love-btn').forEach(btn => {
+    const poemId = btn.dataset.id;
+    const countEl = btn.querySelector('.love-count');
+    const stored = JSON.parse(localStorage.getItem('loves') || '{}');
+    const loves = stored[poemId] || 0;
+    countEl.textContent = loves;
+    if (stored[`liked_${poemId}`]) btn.classList.add('loved');
+
+    btn.addEventListener('click', () => {
+      const liked = btn.classList.toggle('loved');
+      let lovesData = JSON.parse(localStorage.getItem('loves') || '{}');
+      let count = parseInt(countEl.textContent);
+
+      if (liked) {
+        count++;
+        lovesData[`liked_${poemId}`] = true;
+      } else {
+        count = Math.max(0, count - 1);
+        delete lovesData[`liked_${poemId}`];
+      }
+
+      countEl.textContent = count;
+      lovesData[poemId] = count;
+      localStorage.setItem('loves', JSON.stringify(lovesData));
+    });
+  });
+  </script>
 
 
 </body>
