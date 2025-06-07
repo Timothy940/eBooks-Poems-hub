@@ -1283,8 +1283,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 </script>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
   // Load loves from localStorage
   document.querySelectorAll('.love-btn').forEach(btn => {
     const poemId = btn.dataset.id;
@@ -1312,7 +1312,8 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('loves', JSON.stringify(lovesData));
     });
   });
-  </script>
+});
+</script> <!-- ✅ Add this closing tag -->
 
 
 </body>
