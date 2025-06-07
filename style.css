@@ -509,6 +509,13 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .poem-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .poem-card {
   background: rgb(253, 252, 252);
   border-radius: 12px;
