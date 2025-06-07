@@ -1,8 +1,4 @@
 /* ===== BASE STYLES ===== */
- *{
-  box-sizing: border-box;
-}
-/* ✅ GLOBAL STYLES — SHOULD BE AT THE TOP */
 html, body {
   margin: 0;
   padding: 0;
@@ -65,6 +61,14 @@ body {
   line-height: 1.6;
   color: var(--dark);
   background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
 }
 
 /* ===== HERO SECTION ===== */
@@ -486,23 +490,10 @@ body.dashboard-active .sidebar-overlay {
   display: none; /* hidden by default */
 }
 /* Footer stays at bottom */
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 
 footer {
   margin-top: auto;
 }
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background: #fdfdfd;
-  color: #333;
-  line-height: 1.6;
-}
-
 .poem-header {
   background: linear-gradient(135deg, #6b73ff, #000dff);
   color: white;
@@ -566,7 +557,7 @@ html, body {
   padding: 25px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(20px);
 }
 
@@ -576,6 +567,7 @@ html, body {
   box-shadow: 0 20px 40px rgba(36, 35, 35, 0.1);
   border-style: solid;
   color: #013a3e;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
 
 .poem-title {
@@ -623,18 +615,15 @@ header {
 }
 
 /* Poem card styling */
-.poem-card {
+/*.poem-card {
   background: #6e0acc;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-}
-.poem-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-}
+}*/
+
 .ebook-actions {
   margin-top: 10px;
 }
