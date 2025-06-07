@@ -1,7 +1,4 @@
 /* ===== BASE STYLES ===== */
-body {
-  overflow-x: hidden;
-}
 
 :root {
   --primary: #2c3e50;
@@ -504,7 +501,7 @@ body {
   margin-bottom: 10px;
 }
 
-.poem-container {
+/*.poem-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
@@ -528,7 +525,48 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
+}*/
+* {
+  box-sizing: border-box;
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* MAIN POEM GRID STYLES */
+.poem-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* MOBILE FIX: Stack vertically instead of wrapping horizontally */
+@media (max-width: 600px) {
+  .poem-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+}
+
+.poem-card {
+  background: rgb(253, 252, 252);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
 
 .poem-card:hover {
   transform: translateY(-10px);
