@@ -1,4 +1,10 @@
 /* ===== BASE STYLES ===== */
+ {
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden; /* ✅ Prevents horizontal scroll */
+}
 :root {
   --primary: #2c3e50;
   --secondary: #e74c3c;
@@ -506,11 +512,12 @@ body {
 
 .poem-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  padding: 40px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  box-sizing:border-box;
 }
 
 .poem-card {
@@ -521,6 +528,8 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .poem-card:hover {
