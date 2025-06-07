@@ -1262,28 +1262,30 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('loves', JSON.stringify(lovesData));
     });
   });
+  document.addEventListener('DOMContentLoaded', () => {
+    const shareButtons = document.querySelectorAll('.share-btn');
 
-  // Share functionality
-  document.querySelectorAll('.share-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const title = btn.dataset.title;
-      const url = window.location.href + '#' + encodeURIComponent(title);
-      const text = `Check out this poem: "${title}"\n${url}`;
+    shareButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const title = button.getAttribute('data-title');
+        const url = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(title)}`;
+        const text = `Check out this poem: "${title}"`;
 
-      const shareOptions = `
-        <div class="share-menu">
-          <a href="https://wa.me/?text=${encodeURIComponent(text)}" target="_blank">WhatsApp</a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" target="_blank">Facebook</a>
-          <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}" target="_blank">Twitter</a>
-          <button onclick="navigator.clipboard.writeText('${text}')">Copy Link</button>
-        </div>
-      `;
-
-      alert("Sharing options will appear in future implementation. For now, copy this:\n\n" + text);
-      // Future: Inject the above HTML in a styled dropdown
+        if (navigator.share) {
+          navigator.share({
+            title: title,
+            text: text,
+            url: url
+          }).catch(err => {
+            console.error('Share failed:', err);
+          });
+        } else {
+          // Fallback for desktop browsers that don't support Web Share API
+          alert(`Sharing not supported on this device. Copy this:\n\n${text}\n${url}`);
+        }
+      });
     });
   });
-});
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
