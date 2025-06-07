@@ -1262,30 +1262,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('loves', JSON.stringify(lovesData));
     });
   });
-  document.addEventListener('DOMContentLoaded', () => {
-    const shareButtons = document.querySelectorAll('.share-btn');
-
-    shareButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const title = button.getAttribute('data-title');
-        const url = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(title)}`;
-        const text = `Check out this poem: "${title}"`;
-
-        if (navigator.share) {
-          navigator.share({
-            title: title,
-            text: text,
-            url: url
-          }).catch(err => {
-            console.error('Share failed:', err);
-          });
-        } else {
-          // Fallback for desktop browsers that don't support Web Share API
-          alert(`Sharing not supported on this device. Copy this:\n\n${text}\n${url}`);
-        }
-      });
-    });
-  });
+  
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -1311,6 +1288,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const shareButtons = document.querySelectorAll('.share-btn');
+
+    shareButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const title = button.getAttribute('data-title');
+        const url = `${window.location.origin}${window.location.pathname}#${encodeURIComponent(title)}`;
+        const text = `Check out this poem: "${title}"`;
+
+        if (navigator.share) {
+          navigator.share({
+            title: title,
+            text: text,
+            url: url
+          }).catch(err => {
+            console.log('Sharing failed:', err);
+          });
+        } else {
+          alert(`Sharing is not supported on this device.\n\n${text}\n${url}`);
+        }
+      });
+    });
+  });
+</script>
+
 
 </body>
 </html>
