@@ -1,4 +1,8 @@
 /* ===== BASE STYLES ===== */
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --primary: #2c3e50;
   --secondary: #e74c3c;
