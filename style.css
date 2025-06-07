@@ -510,7 +510,7 @@ body {
   margin-bottom: 10px;
 }
 
-.poem-container {
+/*.poem-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
@@ -530,7 +530,40 @@ body {
   transform: translateY(20px);
   word-wrap: break-word;
   overflow-wrap: break-word;
+}*/
+/* Prevent unwanted horizontal scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
+
+/* Fix for poem container on mobile */
+.poem-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Add this if cards are somehow overflowing */
+.poem-card {
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  background: rgb(253, 252, 252);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
 
 .poem-card:hover {
   transform: translateY(-10px);
