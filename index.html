@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Personal Library</title>
+  <link rel="icon" href="7e8b4c24-d933-4fc5-a74a-208b405894e7 (1).png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body class="home">
+
+  <!-- Hamburger Menu Button -->
+  <button class="hamburger-btn">&#9776;</button>
+
+  <!-- Dashboard Sidebar -->
+  <div class="dashboard-sidebar">
+    <div class="sidebar-header">
+      <h3>My Library</h3>
+      <button class="close-btn">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item" data-target="home"><span>🏠</span> Home (Books)</a>
+      <a href="poems.html" class="nav-item external-link"><span>📜</span> Poems</a>
+      <a href="#" class="nav-item" data-target="about"><span>ℹ️</span> About</a>
+    </nav>
+  </div>
+
+  <div class="sidebar-overlay"></div>
+
+  <section id="about" data-section="about" class="about-section" style="display: none;">
+    <div class="about-container">
+      <h2>About Us</h2>
+      <div class="mission-vision">
+        <div class="mission">
+          <h3>Our Mission</h3>
+          <p>Empowering learners with accessible and high-quality digital resources that foster growth and creativity.</p>
+        </div>
+        <div class="vision">
+          <h3>Our Vision</h3>
+          <p>To become the leading platform for open access knowledge, innovation, and digital learning worldwide.</p>
+        </div>
+      </div>
+<br>
+      <div class="services">
+        <h3>What we offer</h3>
+        <ul>
+          <li><span></span> A diverse collection of ebooks and poems across various genres</li>
+          <li><span></span> Regularly updated content to keep you engaged</li>
+          <li><span></span> A platform for readers to explore and discover new works</li>
+    
+        </ul>
+      </div>
+<br>
+<br>
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p><strong>Email:</strong> marcelinusbakyaara@gmail.com</p>
+        <p><strong>Phone:</strong> +233 556387495</p>
+        <p><strong>WhatsApp:</strong> <a href="http://Wa.me/+233556387495" target="_self">Chat with us</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section data-section="home" class="home-section">
+    <div class="hero">
+      <h1>WELCOME TO MY PERSONAL LIBRARY</h1>
+      <h2>[A Fountain of Knowledge]</h2>
+      <p>Explore my collection of life-changing eBooks and beautifully crafted sensational poems</p>
+      <input type="text" id="book-search" placeholder="Search eBooks..." class="search-bar" />
+
+    </div>
+  
+
+    <img src="books-1281581_1280.jpg" alt="Fade-in-image" class="fade-in-image" />
+    <div><p style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>FEATURED BOOKS</b></p></div>
+
+    <!-- ===== FIXED BOOK GRID ===== -->
+    <div class="ebook-grid">
+      <div class="ebook-card">
+        <img src="smartmockups_lf5wp21k.jpg" alt="eBook" class="ebook-cover" loading="lazy" width="150" height="225">
+        <div class="ebook-info">
+          <h3>Squelches Of The Victims</h3>
+          <p class="author">Marcelinus Bakyaara</p>
+          <!-- <div class="rating">★★★★☆</div> -->
+          <div class="ebook-actions">
+            <a href="SQUELCHES OF THE VICTIMS 1234.pdf" target="_blank" class="view-btn">View</a>
+            <a href="SQUELCHES OF THE VICTIMS 1234.pdf" download class="download-btn">
+              <svg class="download-icon" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+              </svg>
+              Download
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ebook-card">
+        <img src="58a8acf2-3445-43ca-bfda-a7ca3ad0beee.png" alt="eBook" class="ebook-cover" loading="lazy" width="150" height="225">
+        <div class="ebook-info">
+          <h3>Poverty In The Lands Of Abundance</h3>
+          <p class="author">Marcelinus Bakyaara</p>
+          <!-- <div class="rating">★★★★★</div> -->
+          <div class="ebook-actions">
+            <a href="Poverty_in_the_lands_of_abundance[2].pdf" target="_blank" class="view-btn">View</a>
+            <a href="Poverty_in_the_lands_of_abundance[2].pdf" download class="download-btn">
+              <svg class="download-icon" viewBox="0 0 24 24" width="16" height="16">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+              </svg>
+              Download
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more .ebook-card blocks here -->
+    </div>
+  </section>
+
+  <div class="loader"><div class="loader-spinner"></div></div>
+
+  <footer style="text-align: center; padding: 20px; background: #f5f5f5;">
+    <p><b>© 2025 [My personal library].All rights reserved</b></p>
+  <p>
+    <a href="http://Wa.me/+233556387495">Contact us</a>
+  </p>
+  </footer>
+
+  <button id="backToTop" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #2c3e50; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer;">↑</button>
+
+  <script>
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script src="script.js" defer></script>
+</body>
+</html>
