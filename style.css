@@ -688,4 +688,49 @@ header {
   color: red;
   font-weight: bold;
 }
+.poem-toc {
+  padding: 2rem;
+  background: rgb(14, 39, 228);
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.poem-toc h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fcfafa;
+  font-size: 1.5rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.toc-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc-grid li {
+  margin-bottom: 0.75rem;
+}
+
+.toc-grid a {
+  text-decoration: none;
+  color: #f3f5f7;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.toc-grid a:hover {
+  color: #ea038a;
+  text-decoration: underline;
+}
+poems.html {
+  scroll-behavior: smooth;
+}
+
 
