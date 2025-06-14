@@ -732,5 +732,7 @@ header {
 poems.html {
   scroll-behavior: smooth;
 }
-
+.poem-search-bar{
+  color:cadetblue;
+}
 
